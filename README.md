@@ -16,7 +16,7 @@ Outputs:
 fizz: buzz
 foo: bar
 
-fizz-foo: fizz-foo
+fizz-foo: buzz-bar
 ```
 
 Usage: 
