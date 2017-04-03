@@ -9,6 +9,7 @@ fizz: buzz
 foo: bar
 
 fizz-foo: {{fizz}}-{{foo}}
+fizz-foo-hey: {{fizz-foo}}-ho
 ```
 
 Outputs:
@@ -17,6 +18,7 @@ fizz: buzz
 foo: bar
 
 fizz-foo: buzz-bar
+fizz-foo-hey: buzz-bar-ho
 ```
 
 Usage: 
