@@ -6,7 +6,7 @@ class InlineYAML {
 	static function main() : Int {
 		var args = Sys.args();
 		if (args == null || args.length < 2) {
-			Sys.stderr().writeString("expected 2 args but got less. inline-ymal in out");
+			Sys.println("Error: expected 2 args but got less. example: inline-ymal in out");
 			return 1;
 		}
 		
@@ -60,7 +60,13 @@ class InlineYAML {
 		var result : String = value;
 		var newVal = reg.map(value, function(r) : String {
 			var match = r.matched(1);
-			return usingMap.get(match);
+			var resultVal = usingMap.get(match);
+			if (resultVal == null) {
+				resultVal = r.matched(0);
+				Sys.println('Warning: can\'t find value for key: \'$match\' used in $value');
+			}
+			
+			return resultVal;
 		});
 		
 		return result != newVal ? newVal : null;
